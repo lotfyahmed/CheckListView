@@ -10,7 +10,7 @@ import UIKit
 
 class CheckCell: UICollectionViewCell {
 
-    @IBOutlet weak var checkboxButton: UIButton!
+    @IBOutlet weak var checkboxImage: UIImageView!
     
     @IBOutlet weak var choiceTitle: UILabel!
 }

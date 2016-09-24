@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "36ABFE2D6E84885D90E1CBB97D7C8FD1AE744767",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "36ABFE2D6E84885D90E1CBB97D7C8FD1AE744767" : 0,
+    "6FAEBFBC5CD6FA91DF75E2CB6DECDACEB728CE97" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F468EFE3-D6BE-4B90-B2AF-9CCBFF370DC7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "36ABFE2D6E84885D90E1CBB97D7C8FD1AE744767" : "CheckListView\/",
+    "6FAEBFBC5CD6FA91DF75E2CB6DECDACEB728CE97" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CheckLists",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CheckLists.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:lotfyahmed\/CheckListView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "36ABFE2D6E84885D90E1CBB97D7C8FD1AE744767"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:lotfyahmed\/MyLocation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6FAEBFBC5CD6FA91DF75E2CB6DECDACEB728CE97"
+    }
+  ]
+}

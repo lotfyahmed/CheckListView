@@ -8,56 +8,81 @@
 
 import UIKit
 
+protocol CheckBoxesDelegate {
+    func submitCheckboxes(checkboxesValue:[Bool])
+}
 private let reuseIdentifier = "CheckCell"
+private let choicesCount = 15
 
-class ChecklistViewController: UICollectionViewController {
+class ChecklistViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    var delegate:CheckBoxesDelegate?
+    
+    var checklistTitles:[String] = Array(count: choicesCount, repeatedValue: "Choice 111111111111111111111111")
+    private var checkListValues:[Bool] = Array(count: choicesCount, repeatedValue: false)
+    
+    enum CheckBox:String {
+        case UnChecked = "checkbox-unchecked"
+        case Checked = "checkbox-checked"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Register cell classes
         self.collectionView!.registerNib(UINib(nibName: "CheckCell", bundle: nil), forCellWithReuseIdentifier:reuseIdentifier)
         
-        let screenSize = UIScreen.mainScreen().bounds
-        let screenWidth = screenSize.width
-        
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
-        layout.itemSize = CGSize(width: screenWidth/4, height: 50)
-        layout.minimumInteritemSpacing = 20
-        layout.minimumLineSpacing = 40
-        collectionView!.collectionViewLayout = layout
     }
     
     // MARK: UICollectionViewDataSource
     
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 15
+        return checklistTitles.count
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CheckCell
+        let image:UIImage?
+        if checkListValues[indexPath.row]{
+            image = UIImage(named: CheckBox.Checked.rawValue)
+        }else{
+            image = UIImage(named: CheckBox.UnChecked.rawValue)
+        }
+        cell.checkboxImage.image = image
+        cell.choiceTitle.text = "\(checklistTitles[indexPath.row]) \(indexPath.row)"
         
-        // Configure the cell
-        cell.choiceTitle.text = "Choice \(indexPath.row)"
         return cell
     }
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.cellForItemAtIndexPath(indexPath)
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        checkListValues[indexPath.row] = !checkListValues[indexPath.row]
+        collectionView.reloadData()
+    }
+    
+    //MARK: Buttons Actions
+    
+    
+    @IBAction func applyAction(sender: UIButton) {
+        self.delegate?.submitCheckboxes(checkListValues)
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func cancelAction(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: UICollectionViewDelegate
-    /*
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
-        let length = (UIScreen.mainScreen().bounds.width-15)/2
-        return CGSizeMake(length,length);
-    }*/
+        let length = (UIScreen.mainScreen().bounds.width) * 0.4
+        return CGSizeMake(length,50);
+    }
 }

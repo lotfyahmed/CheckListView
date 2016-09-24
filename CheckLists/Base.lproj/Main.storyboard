@@ -42,7 +42,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="zeU-ic-XyT" kind="show" id="Amf-0r-Ife"/>
+                                    <segue destination="cCZ-hK-z9z" kind="show" id="bxK-do-ecY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -79,39 +79,80 @@
             <point key="canvasLocation" x="322.5" y="321"/>
         </scene>
         <!--Checklist View Controller-->
-        <scene sceneID="imx-zg-80h">
+        <scene sceneID="QnX-kp-0ew">
             <objects>
-                <collectionViewController id="zeU-ic-XyT" customClass="ChecklistViewController" customModule="CheckLists" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="f9c-xD-WUn">
+                <viewController id="cCZ-hK-z9z" customClass="ChecklistViewController" customModule="CheckLists" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2dZ-7X-oxa"/>
+                        <viewControllerLayoutGuide type="bottom" id="OFa-jS-uWJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="npb-YN-Uuf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wTg-jR-SYp">
+                                <rect key="frame" x="15" y="28" width="565" height="456"/>
+                                <color key="backgroundColor" red="1" green="0.97320728164879133" blue="0.43092768791823721" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GlR-I6-rPh">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gCj-0s-QdE">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="cCZ-hK-z9z" id="k7Q-OA-UeN"/>
+                                    <outlet property="delegate" destination="cCZ-hK-z9z" id="ccP-uz-KrS"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjr-Sr-cPg">
+                                <rect key="frame" x="20" y="492" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.75560402870178223" green="0.61436882673618709" blue="0.73472324614096973" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Apply"/>
+                                <connections>
+                                    <action selector="applyAction:" destination="cCZ-hK-z9z" eventType="touchUpInside" id="fvE-dV-njA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dZ-9V-mIe">
+                                <rect key="frame" x="20" y="537" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.71503200550576695" green="0.74511401460404691" blue="0.75560402870178223" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelAction:" destination="cCZ-hK-z9z" eventType="touchUpInside" id="vnh-eL-nPX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1OP-IQ-JZC">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="hMi-R2-xhZ" customClass="CheckCell" customModule="CheckLists" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="zeU-ic-XyT" id="i8p-EY-ETi"/>
-                            <outlet property="delegate" destination="zeU-ic-XyT" id="7pR-H5-Gzd"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wyf-of-srJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="wTg-jR-SYp" firstAttribute="top" secondItem="2dZ-7X-oxa" secondAttribute="bottom" constant="8" id="625-eS-qcB"/>
+                            <constraint firstItem="wTg-jR-SYp" firstAttribute="leading" secondItem="npb-YN-Uuf" secondAttribute="leadingMargin" constant="-5" id="I2C-8H-d87"/>
+                            <constraint firstItem="OFa-jS-uWJ" firstAttribute="top" secondItem="0dZ-9V-mIe" secondAttribute="bottom" constant="33" id="Ie8-ca-eId"/>
+                            <constraint firstItem="0dZ-9V-mIe" firstAttribute="leading" secondItem="npb-YN-Uuf" secondAttribute="leadingMargin" id="Rhm-zg-oHP"/>
+                            <constraint firstItem="Vjr-Sr-cPg" firstAttribute="trailing" secondItem="npb-YN-Uuf" secondAttribute="trailingMargin" id="TR9-Jl-9TX"/>
+                            <constraint firstItem="wTg-jR-SYp" firstAttribute="trailing" secondItem="npb-YN-Uuf" secondAttribute="trailingMargin" id="XqT-z5-JLb"/>
+                            <constraint firstItem="0dZ-9V-mIe" firstAttribute="top" secondItem="Vjr-Sr-cPg" secondAttribute="bottom" constant="15" id="bPb-yI-B8W"/>
+                            <constraint firstItem="0dZ-9V-mIe" firstAttribute="trailing" secondItem="npb-YN-Uuf" secondAttribute="trailingMargin" id="rMf-fk-jTp"/>
+                            <constraint firstItem="Vjr-Sr-cPg" firstAttribute="top" secondItem="wTg-jR-SYp" secondAttribute="bottom" constant="8" id="vuo-lv-t2r"/>
+                            <constraint firstItem="Vjr-Sr-cPg" firstAttribute="leading" secondItem="npb-YN-Uuf" secondAttribute="leadingMargin" id="zjR-H7-2xf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="wTg-jR-SYp" id="BjO-iR-8SV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZw-F9-WWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940.5" y="326"/>
+            <point key="canvasLocation" x="936" y="320"/>
         </scene>
     </scenes>
 </document>

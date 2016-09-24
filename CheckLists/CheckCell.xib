@@ -9,45 +9,44 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CheckCell" id="gTV-IL-0wX" customClass="CheckCell" customModule="CheckLists" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="424" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="424" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmJ-gD-XDF">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="nvU-lb-5Gk"/>
-                        </constraints>
-                        <state key="normal" image="checkbox-checked"/>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="Choice" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdF-1B-Rxa">
-                        <rect key="frame" x="50" y="0.0" width="366" height="50"/>
+                        <rect key="frame" x="39" y="0.0" width="111" height="50"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox-unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="z4p-q2-9zF">
+                        <rect key="frame" x="8" y="15" width="23" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="Zqw-qV-YpG"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="UmJ-gD-XDF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="F7A-YT-A2h"/>
-                <constraint firstItem="BdF-1B-Rxa" firstAttribute="bottom" secondItem="UmJ-gD-XDF" secondAttribute="bottom" id="L3B-Sc-fCr"/>
-                <constraint firstItem="BdF-1B-Rxa" firstAttribute="top" secondItem="UmJ-gD-XDF" secondAttribute="top" id="fte-iG-hbP"/>
-                <constraint firstAttribute="bottom" secondItem="UmJ-gD-XDF" secondAttribute="bottom" id="s8d-oY-4RC"/>
-                <constraint firstItem="BdF-1B-Rxa" firstAttribute="leading" secondItem="UmJ-gD-XDF" secondAttribute="trailing" id="x5g-OA-dpm"/>
-                <constraint firstItem="UmJ-gD-XDF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yFe-1O-Ew0"/>
-                <constraint firstItem="BdF-1B-Rxa" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailingMargin" id="zbv-wt-3yg"/>
+                <constraint firstAttribute="bottom" secondItem="z4p-q2-9zF" secondAttribute="bottom" constant="12" id="03z-WG-gdy"/>
+                <constraint firstItem="z4p-q2-9zF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="C4N-XU-zn9"/>
+                <constraint firstItem="BdF-1B-Rxa" firstAttribute="leading" secondItem="z4p-q2-9zF" secondAttribute="trailing" constant="8" id="ELq-Xi-B54"/>
+                <constraint firstItem="z4p-q2-9zF" firstAttribute="top" secondItem="BdF-1B-Rxa" secondAttribute="top" constant="15" id="WbX-48-MHP"/>
+                <constraint firstItem="z4p-q2-9zF" firstAttribute="bottom" secondItem="BdF-1B-Rxa" secondAttribute="bottom" constant="-12" id="aZ3-JK-j4j"/>
+                <constraint firstItem="z4p-q2-9zF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="bMf-gP-wCI"/>
+                <constraint firstItem="BdF-1B-Rxa" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailingMargin" constant="8" id="zbv-wt-3yg"/>
             </constraints>
-            <size key="customSize" width="424" height="60"/>
+            <size key="customSize" width="265" height="60"/>
             <connections>
-                <outlet property="checkboxButton" destination="UmJ-gD-XDF" id="Psf-dx-LAf"/>
+                <outlet property="checkboxImage" destination="z4p-q2-9zF" id="VIM-4v-XDv"/>
                 <outlet property="choiceTitle" destination="BdF-1B-Rxa" id="T66-W4-asa"/>
             </connections>
-            <point key="canvasLocation" x="510" y="344"/>
+            <point key="canvasLocation" x="274" y="341"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="checkbox-checked" width="594" height="596"/>
+        <image name="checkbox-unchecked" width="512" height="512"/>
     </resources>
 </document>
